@@ -69,6 +69,8 @@ bool SDLController::connect()
 	if (const char* name = SDL_GameControllerName(m_controller))
 		m_display_name = name;
 
+	SDL_GameControllerAddMapping("050000007e0500000603000001860000,Nintendo Wii Remote,a:b0,b:b1,back:b2,guide:b4,start:b3,x:b9,y:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,");
+
 	for (int i = 0; i < SDL_CONTROLLER_BUTTON_MAX; ++i)
 	{
 		m_buttons[i] = SDL_GameControllerHasButton(m_controller, (SDL_GameControllerButton)i);
